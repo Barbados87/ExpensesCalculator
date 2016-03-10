@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
@@ -14,17 +10,17 @@ using ExpensesCalculator.Models;
 
 namespace ExpensesCalculator.Controllers
 {
-    public class PeopleController : ApiController
+    public class PersonController : ApiController
     {
         private CalculatorContext db = new CalculatorContext();
 
-        // GET: api/People
+        // GET: api/Person
         public IQueryable<Person> GetPersons()
         {
             return db.Persons;
         }
 
-        // GET: api/People/5
+        // GET: api/Person/5
         [ResponseType(typeof(Person))]
         public async Task<IHttpActionResult> GetPerson(int id)
         {
@@ -37,7 +33,7 @@ namespace ExpensesCalculator.Controllers
             return Ok(person);
         }
 
-        // PUT: api/People/5
+        // PUT: api/Person/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutPerson(int id, Person person)
         {
@@ -72,7 +68,7 @@ namespace ExpensesCalculator.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/People
+        // POST: api/Person
         [ResponseType(typeof(Person))]
         public async Task<IHttpActionResult> PostPerson(Person person)
         {
@@ -87,7 +83,7 @@ namespace ExpensesCalculator.Controllers
             return CreatedAtRoute("DefaultApi", new { id = person.Id }, person);
         }
 
-        // DELETE: api/People/5
+        // DELETE: api/Person/5
         [ResponseType(typeof(Person))]
         public async Task<IHttpActionResult> DeletePerson(int id)
         {
