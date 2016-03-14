@@ -3,17 +3,59 @@
         <span>Add expense: </span>
     </div>
     <div>
-        <div>
-            <span>Person: </span>
-            <input type="text"/>
-        </div>
-        <div>
-            <span>Expense type: </span>
-            <input type="text"/>
-        </div>
-        <div>
-            <span>Count: </span>
-            <input type="text"/>    
-        </div>
+        <table>
+            <tr>
+                <td>
+                    <span>Person:</span>
+                </td>
+                <td>
+                    <select ng-model="newExpense.personId">
+                        <option ng-repeat="person in people.$values" value="{{person.id}}">
+                            {{person.name}}
+                        </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Expense type:</span>
+                </td>
+                <td>
+                    <input type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Amount:</span>
+                </td>
+                <td>
+                    <input type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Date:</span>
+                </td>
+                <td>
+                    <input type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Place:</span>
+                </td>
+                <td>
+                    <input type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Description:</span>
+                </td>
+                <td>
+                    <input type="text" />
+                </td>
+            </tr>
+        </table>
     </div>
 </div>
