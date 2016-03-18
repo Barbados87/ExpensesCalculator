@@ -20,5 +20,7 @@ namespace ExpensesCalculator.DAL
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
+
+        public System.Data.Entity.DbSet<ExpensesCalculator.Models.ExpenseType> ExpenseTypes { get; set; }
     }
 }

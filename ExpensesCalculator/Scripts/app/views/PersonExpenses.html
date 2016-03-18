@@ -1,7 +1,7 @@
 ﻿<div>
     <div>{{person.name}} expenses</div>
     <div>
-        <a href="#/newexpense">Add</a>
+        <a href="#/addexpense">Add</a>
     </div>
     <table>
         <tr>
@@ -9,6 +9,12 @@
             <td>Date</td>
             <td>Place</td>
             <td>Amount</td>
+        </tr>
+        <tr ng-repeat="expense in expenses.$values">
+            <td>{{expense.description}}</td>
+            <td>{{expense.date}}</td>
+            <td>{{expense.place}}</td>
+            <td>{{expense.amount}}</td>
         </tr>
         <tr>
             <td colspan="2"></td>

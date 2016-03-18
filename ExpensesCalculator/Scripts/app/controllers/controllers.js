@@ -18,10 +18,16 @@ calculatorControllers.controller('NewExpenseCtrl', ['$scope', '$http', 'peopleCr
         peopleCrudService.get(function (data) {
             $scope.people = data;
         });
+
+        $scope.addNew = function() {
+            expensesCrudService.save($scope.newExpense);
+            $scope.newExpense = {};
+        }
     }
 ]);
 
 calculatorControllers.controller('PersonExpensesCtrl', ['$scope', '$http', 'expensesCrudService',
     function ($scope, $http, expensesCrudService) {
+
     }
 ]);
