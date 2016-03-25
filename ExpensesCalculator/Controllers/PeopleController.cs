@@ -21,6 +21,12 @@ namespace ExpensesCalculator.Controllers
         }
 
         [ResponseType(typeof(PersonModel))]
+        public async Task<IHttpActionResult> Get(int id)
+        {
+            return Ok(await GetPerson(id));
+        }
+
+        [ResponseType(typeof(PersonModel))]
         public async Task<IHttpActionResult> Post(Person person)
         {
             if (!ModelState.IsValid)
@@ -47,6 +53,13 @@ namespace ExpensesCalculator.Controllers
             var people = await _dbContext.Persons.ToListAsync();
 
             return people.Select(p => new PersonModel(p));
+        }
+
+        private async Task<PersonModel> GetPerson(int id)
+        {
+            var person = await _dbContext.Persons.Where(p => p.Id == id).FirstAsync();
+
+            return new PersonModel(person);
         }
 
         private async Task<bool> SaveAsync(Person person)

@@ -21,6 +21,12 @@ namespace ExpensesCalculator.Controllers
             return Ok(await GetExpenses());
         }
 
+        [ResponseType(typeof(IEnumerable<ExpenseModel>))]
+        public async Task<IHttpActionResult> Get(int personId)
+        {
+            return Ok(await GetExpenses(personId));
+        }
+
         // POST: api/Expenses
         [ResponseType(typeof(Expense))]
         public async Task<IHttpActionResult> Post(Expense expense)
@@ -48,6 +54,13 @@ namespace ExpensesCalculator.Controllers
         private async Task<IEnumerable<ExpenseModel>> GetExpenses()
         {
             var expenses = await db.Expenses.ToListAsync();
+
+            return expenses.Select(e => new ExpenseModel(e));
+        }
+
+        private async Task<IEnumerable<ExpenseModel>> GetExpenses(int personId)
+        {
+            var expenses = await db.Expenses.Where(e => e.PersonId == personId).ToListAsync();
 
             return expenses.Select(e => new ExpenseModel(e));
         }

@@ -26,8 +26,11 @@ calculatorControllers.controller('NewExpenseCtrl', ['$scope', '$http', 'peopleCr
     }
 ]);
 
-calculatorControllers.controller('PersonExpensesCtrl', ['$scope', '$http', 'expensesCrudService',
-    function ($scope, $http, expensesCrudService) {
-
+calculatorControllers.controller('PersonExpensesCtrl', ['$scope', '$http', '$routeParams', 'peopleCrudService', 'expensesCrudService',
+    function ($scope, $http, $routeParams, peopleCrudService, expensesCrudService) {
+        peopleCrudService.getPerson($routeParams.personId, function(data) {
+                $scope.personName = data.name;
+            }
+        );
     }
 ]);

@@ -10,6 +10,12 @@ calculatorServices.factory('peopleCrudService', [
             });
         };
 
+        factory.getPerson = function (id, callback) {
+            $http.get('/calc/api/people/' + id).then(function (response) {
+                callback(response.data);
+            });
+        };
+
         factory.save = function(person) {
             $http.post('/calc/api/people',
             {

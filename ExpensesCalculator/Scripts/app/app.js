@@ -18,6 +18,11 @@ calculatorApp.config(['$routeProvider',
                 templateUrl: 'calc/Scripts/app/views/PersonExpenses.html',
                 controller: 'PersonExpensesCtrl'
             })
+            .when('/expenses/:personId',
+            {
+                templateUrl: 'calc/Scripts/app/views/PersonExpenses.html',
+                controller: 'PersonExpensesCtrl'
+            })
             .when('/newexpense',
             {
                 templateUrl: 'calc/Scripts/app/views/AddExpense.html',
