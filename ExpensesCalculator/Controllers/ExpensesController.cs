@@ -36,10 +36,9 @@ namespace ExpensesCalculator.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Expenses.Add(expense);
-            await db.SaveChangesAsync();
+            var isCorrect = await SaveAsync(expense);
 
-            return CreatedAtRoute("DefaultApi", new { id = expense.Id }, expense);
+            return Ok(isCorrect);
         }
 
         protected override void Dispose(bool disposing)
@@ -63,6 +62,14 @@ namespace ExpensesCalculator.Controllers
             var expenses = await db.Expenses.Where(e => e.PersonId == personId).ToListAsync();
 
             return expenses.Select(e => new ExpenseModel(e));
+        }
+
+        private async Task<bool> SaveAsync(Expense expense)
+        {
+            db.Expenses.Add(expense);
+            await db.SaveChangesAsync();
+
+            return true;
         }
     }
 }

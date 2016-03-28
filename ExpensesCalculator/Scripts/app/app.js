@@ -23,7 +23,7 @@ calculatorApp.config(['$routeProvider',
                 templateUrl: 'calc/Scripts/app/views/PersonExpenses.html',
                 controller: 'PersonExpensesCtrl'
             })
-            .when('/newexpense',
+            .when('/addexpense',
             {
                 templateUrl: 'calc/Scripts/app/views/AddExpense.html',
                 controller: 'NewExpenseCtrl'

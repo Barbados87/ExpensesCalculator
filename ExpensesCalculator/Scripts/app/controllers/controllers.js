@@ -32,5 +32,7 @@ calculatorControllers.controller('PersonExpensesCtrl', ['$scope', '$http', '$rou
                 $scope.personName = data.name;
             }
         );
+
+        //expensesCrudService.get
     }
 ]);
