@@ -1,7 +1,7 @@
 ﻿var calculatorControllers = new angular.module('calculatorControllers', []);
 
-calculatorControllers.controller('PeopleListCtrl', ['$scope', '$http', 'peopleCrudService',
-    function ($scope, $http, peopleCrudService) {
+calculatorControllers.controller('PeopleListCtrl', ['$scope', 'peopleCrudService',
+    function ($scope, peopleCrudService) {
         peopleCrudService.get(function (data) {
             $scope.people = data;
         });
@@ -13,8 +13,10 @@ calculatorControllers.controller('PeopleListCtrl', ['$scope', '$http', 'peopleCr
     }
 ]);
 
-calculatorControllers.controller('NewExpenseCtrl', ['$scope', '$http', 'peopleCrudService', 'expensesCrudService',
-    function($scope, $http, peopleCrudService, expensesCrudService) {
+calculatorControllers.controller('NewExpenseCtrl', ['$scope', '$routeParams', 'peopleCrudService', 'expensesCrudService',
+    function ($scope, $routeParams, peopleCrudService, expensesCrudService) {
+        $scope.newExpense = {};
+        $scope.newExpense.personId = $routeParams.personId;
         peopleCrudService.get(function (data) {
             $scope.people = data;
         });
@@ -22,13 +24,14 @@ calculatorControllers.controller('NewExpenseCtrl', ['$scope', '$http', 'peopleCr
         $scope.addNew = function() {
             expensesCrudService.save($scope.newExpense);
             $scope.newExpense = {};
-        }
+        };
     }
 ]);
 
-calculatorControllers.controller('PersonExpensesCtrl', ['$scope', '$http', '$routeParams', 'peopleCrudService', 'expensesCrudService',
-    function ($scope, $http, $routeParams, peopleCrudService, expensesCrudService) {
-        peopleCrudService.getPerson($routeParams.personId, function(data) {
+calculatorControllers.controller('PersonExpensesCtrl', ['$scope', '$routeParams', 'peopleCrudService', 'expensesCrudService',
+    function ($scope, $routeParams, peopleCrudService, expensesCrudService) {
+        $scope.personId = $routeParams.personId;
+        peopleCrudService.getPerson($routeParams.personId, function (data) {
                 $scope.personName = data.name;
             }
         );
