@@ -25,8 +25,8 @@ namespace ExpensesCalculator.Models
 
         public virtual Person Person { get; set; }
 
-        public ExpenseType Type { get; set; }
+        //public ExpenseType Type { get; set; }
 
-        public Place Place { get; set; }
+        //public Place Place { get; set; }
     }
 }

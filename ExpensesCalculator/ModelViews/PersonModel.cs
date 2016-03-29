@@ -21,7 +21,6 @@ namespace ExpensesCalculator.ModelViews
         {
             Id = person.Id;
             Name = person.Name;
-            Expenses = person.Expenses == null ?  new List<ExpenseModel>() : person.Expenses.Select(e => new ExpenseModel(e)).ToList();
         }
     }
 }

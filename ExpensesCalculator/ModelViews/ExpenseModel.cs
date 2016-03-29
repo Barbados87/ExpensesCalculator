@@ -20,9 +20,9 @@ namespace ExpensesCalculator.ModelViews
         
         public PersonModel Person { get; set; }
 
-        public ExpenseTypeModel Type { get; set; }
+        //public ExpenseTypeModel Type { get; set; }
 
-        public PlaceModel Place { get; set; }
+        //public PlaceModel Place { get; set; }
 
         public ExpenseModel(Expense expense)
         {
@@ -32,8 +32,8 @@ namespace ExpensesCalculator.ModelViews
             Date = expense.Date;
             Amount = expense.Amount;
             Person = new PersonModel(expense.Person);
-            Type = new ExpenseTypeModel(expense.Type);
-            Place = new PlaceModel(expense.Place);
+            //Type = new ExpenseTypeModel(expense.Type);
+            //Place = new PlaceModel(expense.Place);
         }
     }
 }

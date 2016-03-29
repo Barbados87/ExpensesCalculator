@@ -14,13 +14,12 @@ namespace ExpensesCalculator.DAL
 
         public CalculatorContext() : base("CalculatorContext")
         {
+            Configuration.ProxyCreationEnabled = false;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
-
-        public System.Data.Entity.DbSet<ExpensesCalculator.Models.ExpenseType> ExpenseTypes { get; set; }
     }
 }

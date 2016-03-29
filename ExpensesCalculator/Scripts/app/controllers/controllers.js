@@ -36,6 +36,8 @@ calculatorControllers.controller('PersonExpensesCtrl', ['$scope', '$routeParams'
             }
         );
 
-        //expensesCrudService.get
+        expensesCrudService.getExpenses($scope.personId, function(data) {
+            $scope.expenses = data;
+        });
     }
 ]);

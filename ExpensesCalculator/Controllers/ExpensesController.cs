@@ -52,7 +52,9 @@ namespace ExpensesCalculator.Controllers
 
         private async Task<IEnumerable<ExpenseModel>> GetExpenses()
         {
-            var expenses = await db.Expenses.ToListAsync();
+            var expenses = await db.Expenses
+                .Include(e => e.Person)
+                .ToListAsync();
 
             return expenses.Select(e => new ExpenseModel(e));
         }

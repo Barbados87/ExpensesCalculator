@@ -38,6 +38,12 @@ calculatorServices.factory('expensesCrudService', ['$http', '$location', functio
         });
     };
 
+    factory.getExpenses = function(personId, callback) {
+        $http.get('/calc/api/expenses/' + personId).then(function(response) {
+            callback(response.data);
+        });
+    };
+
     factory.save = function (expense) {
         $http.post('/calc/api/expenses',
         {
