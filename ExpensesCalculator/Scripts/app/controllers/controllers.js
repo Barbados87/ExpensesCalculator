@@ -38,6 +38,7 @@ calculatorControllers.controller('PersonExpensesCtrl', ['$scope', '$routeParams'
 
         expensesCrudService.getExpenses($scope.personId, function(data) {
             $scope.expenses = data;
+            $scope.expenses.totalAmount = 0;
         });
     }
 ]);

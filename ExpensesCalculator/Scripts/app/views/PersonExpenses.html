@@ -7,18 +7,16 @@
         <tr>
             <td>Name</td>
             <td>Date</td>
-            <td>Place</td>
             <td>Amount</td>
         </tr>
-        <tr ng-repeat="expense in expenses.$values">
+        <tr ng-repeat="expense in expenses.$values" ng-init="expenses.totalAmount = expenses.totalAmount + expense.amount">
             <td>{{expense.description}}</td>
-            <td>{{expense.date}}</td>
-            <td>{{expense.place}}</td>
+            <td>{{expense.date | date:'yyyy-MM-dd'}}</td>
             <td>{{expense.amount}}</td>
         </tr>
         <tr>
             <td colspan="2"></td>
-            <td>Total:</td>
+            <td>Total: {{expenses.totalAmount}}</td>
             <td></td>
         </tr>
     </table>
