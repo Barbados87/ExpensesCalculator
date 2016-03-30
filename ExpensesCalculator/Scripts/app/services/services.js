@@ -52,7 +52,7 @@ calculatorServices.factory('expensesCrudService', ['$http', '$location', functio
             "date": expense.date,
             "description": expense.description
         }).then(function () {
-            $location.path('~/Scripts/app/views/PersonExpenses.html');
+            $location.path('/expenses/' + expense.personId);
         });
     };
 
