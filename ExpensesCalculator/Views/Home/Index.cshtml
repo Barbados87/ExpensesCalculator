@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="calculatorApp">
+<html ng-app="calculatorApp" lang="en">
     <head>
         <title></title>
 
@@ -7,8 +7,9 @@
     </head>
     <body>
 
-        <div ng-view></div>
+        <div ng-view class="container"></div>
 
+        @Scripts.Render("~/Scripts/jquery-2.2.2.min.js")
         @Scripts.Render("~/Scripts/angular.js")
         @Scripts.Render("~/Scripts/angular-route.js")
         @Scripts.Render("~/Scripts/app/app.js")
