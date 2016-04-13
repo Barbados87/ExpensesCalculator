@@ -18,7 +18,7 @@ namespace ExpensesCalculator.ModelViews
 
         public float Amount { get; set; }
         
-        public PersonModel Person { get; set; }
+        public int PersonId { get; set; }
 
         //public ExpenseTypeModel Type { get; set; }
 
@@ -31,7 +31,7 @@ namespace ExpensesCalculator.ModelViews
             Description = expense.Description;
             Date = expense.Date;
             Amount = expense.Amount;
-            Person = new PersonModel(expense.Person);
+            PersonId = expense.PersonId;
             //Type = new ExpenseTypeModel(expense.Type);
             //Place = new PlaceModel(expense.Place);
         }

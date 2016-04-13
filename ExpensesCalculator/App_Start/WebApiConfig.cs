@@ -25,6 +25,11 @@ namespace ExpensesCalculator
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+            config.Routes.MapHttpRoute(
+                name: "ExpensesApi",
+                routeTemplate: "api/expenses/{personId}",
+                defaults: new { personId = RouteParameter.Optional }
+            );
         }
     }
 }

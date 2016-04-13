@@ -10,32 +10,32 @@ calculatorApp.config(['$routeProvider',
         $routeProvider
             .when('/people',
             {
-                templateUrl: 'calc/Scripts/app/views/PeopleList.html',
+                templateUrl: 'Scripts/app/views/PeopleList.html',
                 controller: 'PeopleListCtrl'
             })
             .when('/expenses',
             {
-                templateUrl: 'calc/Scripts/app/views/PersonExpenses.html',
+                templateUrl: 'Scripts/app/views/PersonExpenses.html',
                 controller: 'PersonExpensesCtrl'
             })
             .when('/expenses/:personId',
             {
-                templateUrl: 'calc/Scripts/app/views/PersonExpenses.html',
+                templateUrl: 'Scripts/app/views/PersonExpenses.html',
                 controller: 'PersonExpensesCtrl'
             })
             .when('/addexpense',
             {
-                templateUrl: 'calc/Scripts/app/views/AddExpense.html',
+                templateUrl: 'Scripts/app/views/AddExpense.html',
                 controller: 'NewExpenseCtrl'
             })
             .when('/addexpense/:personId',
             {
-                templateUrl: 'calc/Scripts/app/views/AddExpense.html',
+                templateUrl: 'Scripts/app/views/AddExpense.html',
                 controller: 'NewExpenseCtrl'
             })
             .when('/debts',
             {
-                templateUrl: 'calc/Scripts/app/views/PersonDebts.html',
+                templateUrl: 'Scripts/app/views/PersonDebts.html',
                 controller: 'PersonDebtsCtrl'
             })
             .otherwise(

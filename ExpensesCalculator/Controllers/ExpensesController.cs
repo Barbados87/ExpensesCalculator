@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -22,9 +21,9 @@ namespace ExpensesCalculator.Controllers
         }
 
         [ResponseType(typeof(IEnumerable<ExpenseModel>))]
-        public async Task<IHttpActionResult> Get(int personId)
+        public async Task<IHttpActionResult> Get(int id)
         {
-            return Ok(await GetExpenses(personId));
+            return Ok(await GetExpenses(id));
         }
 
         // POST: api/Expenses
