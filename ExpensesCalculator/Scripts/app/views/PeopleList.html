@@ -1,30 +1,30 @@
 ﻿<div class="row">
-    <div class="form-inline">
+    <div class="form-inline text-right">
         <div class="form-group">
-            <label for="newPersonName">Name</label>
+            <label for="newPersonName">Name:</label>
             <input id="newPersonName" type="text" placeholder="Name" class="form-control" ng-model="newPerson.name"/>
+            <input type="button" class="btn btn-default" value="Add" ng-click="addNew()" />
         </div>
-        <input type="button" class="btn btn-default" value="Add" ng-click="addNew()"/>
     </div>
 
     <table class="table">
         <thead>
-        <tr>
-            <td colspan="3">Name</td>
-        </tr>
+            <tr>
+                <th colspan="3">Name</th>
+            </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="person in people.$values | orderBy : name">
-            <td>
-                {{person.name}}
-            </td>
-            <td>
-                <a href="#/expenses/{{person.id}}">Expenses</a>
-            </td>
-            <td>
-                <a href="#/debts/{{person.id}}">Debts</a>
-            </td>
-        </tr>
+            <tr ng-repeat="person in people.$values | orderBy : name">
+                <td>
+                    {{person.name}}
+                </td>
+                <td>
+                    <a href="#/expenses/{{person.id}}">Expenses</a>
+                </td>
+                <td>
+                    <a href="#/debts/{{person.id}}">Debts</a>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>

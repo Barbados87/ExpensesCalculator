@@ -1,50 +1,45 @@
-﻿<div>
-    <div>
-        <span>Add expense: </span>
-    </div>
-    <div>
-        <table>
-            <tr>
-                <td>
-                    <span>Person:</span>
-                </td>
-                <td>
-                    <select ng-model="newExpense.personId">
-                        <option ng-repeat="person in people.$values" value="{{person.id}}">
-                            {{person.name}}
-                        </option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>Amount:</span>
-                </td>
-                <td>
-                    <input type="text" ng-model="newExpense.amount" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>Date:</span>
-                </td>
-                <td>
-                    <input type="text" ng-model="newExpense.date" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>Description:</span>
-                </td>
-                <td>
-                    <input type="text" ng-model="newExpense.description"/>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <input type="button" value="Add" ng-click="addNew()" />
-                </td>
-            </tr>
-        </table>
-    </div>
+﻿<div class="row">  
+    <table>
+        <tr>
+            <td>
+                <span>Person:</span>
+            </td>
+            <td>
+                <select ng-model="newExpense.personId">
+                    <option ng-repeat="person in people.$values" value="{{person.id}}">
+                        {{person.name}}
+                    </option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Amount:</span>
+            </td>
+            <td>
+                <input type="text" ng-model="newExpense.amount"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Date:</span>
+            </td>
+            <td>
+                <input type="text" ng-model="newExpense.date"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Description:</span>
+            </td>
+            <td>
+                <input type="text" ng-model="newExpense.description"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input class="btn btn-default" type="button" value="Add" ng-click="addNew()" />
+            </td>
+        </tr>
+    </table>
 </div>
