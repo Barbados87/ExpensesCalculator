@@ -42,3 +42,9 @@ calculatorControllers.controller('PersonExpensesCtrl', ['$scope', '$routeParams'
         });
     }
 ]);
+
+calculatorControllers.controller('PersonDebtsCtrl', ['$scope', 'peopleCrudService',
+    function ($scope, peopleCrudService) {
+        
+    }
+]);
