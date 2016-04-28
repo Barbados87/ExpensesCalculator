@@ -45,6 +45,8 @@ calculatorControllers.controller('PersonExpensesCtrl', ['$scope', '$routeParams'
 
 calculatorControllers.controller('PersonDebtsCtrl', ['$scope', 'peopleCrudService',
     function ($scope, peopleCrudService) {
-        
+        peopleCrudService.get(function (data) {
+            $scope.people = data;
+        });
     }
 ]);

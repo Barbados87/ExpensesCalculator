@@ -38,6 +38,11 @@ calculatorApp.config(['$routeProvider',
                 templateUrl: 'Scripts/app/views/PersonDebts.html',
                 controller: 'PersonDebtsCtrl'
             })
+            .when('/debts/:personId',
+            {
+                templateUrl: 'Scripts/app/views/PersonDebts.html',
+                controller: 'PersonDebtsCtrl'
+            })
             .otherwise(
             {
                 redirectTo: '/people'

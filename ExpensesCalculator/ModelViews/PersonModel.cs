@@ -12,6 +12,8 @@ namespace ExpensesCalculator.ModelViews
 
         public ICollection<ExpenseModel> Expenses { get; set; }
 
+        public float TotalExpenses => Expenses.Sum(e => e.Amount);
+
         public PersonModel()
         {
             
@@ -21,6 +23,7 @@ namespace ExpensesCalculator.ModelViews
         {
             Id = person.Id;
             Name = person.Name;
+            Expenses = person.Expenses.Select(e => new ExpenseModel(e)).ToList();
         }
     }
 }

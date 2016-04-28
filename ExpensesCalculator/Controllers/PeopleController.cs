@@ -50,14 +50,14 @@ namespace ExpensesCalculator.Controllers
 
         private async Task<IEnumerable<PersonModel>> GetPeople()
         {
-            var people = await _dbContext.Persons.ToListAsync();
+            var people = await _dbContext.Persons.Include(p => p.Expenses).ToListAsync();
 
             return people.Select(p => new PersonModel(p));
         }
 
         private async Task<PersonModel> GetPerson(int id)
         {
-            var person = await _dbContext.Persons.Where(p => p.Id == id).FirstAsync();
+            var person = await _dbContext.Persons.Include(p => p.Expenses).Where(p => p.Id == id).FirstAsync();
 
             return new PersonModel(person);
         }
