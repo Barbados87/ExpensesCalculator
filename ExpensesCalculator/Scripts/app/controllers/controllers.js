@@ -56,6 +56,16 @@ calculatorControllers.controller('PersonDebtsCtrl', ['$scope', '$routeParams', '
 
         peopleCrudService.get(function (data) {
             $scope.people = data;
+            var totalExpenses = 0;
+            var currentPersonExpenses = 0;
+            for (var i = 0; i < data.$values.length; i++) {
+                var person = data.$values[i];
+                if (person.id == $routeParams.personId) {
+                    currentPersonExpenses = person.totalExpenses;
+                }
+                totalExpenses += person.totalExpenses;
+            }
+            $scope.personDebt = totalExpenses / 4 - currentPersonExpenses;
         });
     }
 ]);

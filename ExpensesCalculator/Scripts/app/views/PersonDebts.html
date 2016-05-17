@@ -1,7 +1,7 @@
 ﻿<div class="row">
     <h2>{{personName}}'s debts</h2>
     <table class="table">
-        <tr ng-repeat="person in people.$values | filter: positiveExpensesFilter">
+        <tr ng-repeat="person in people.$values">
             <td>
                 {{person.name}} spent
             </td>
