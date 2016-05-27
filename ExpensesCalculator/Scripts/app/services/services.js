@@ -38,8 +38,8 @@ calculatorServices.factory('expensesCrudService', ['$http', '$location', functio
         });
     };
 
-    factory.getExpenses = function(personId, callback) {
-        $http.get('/calc/api/expenses/' + personId).then(function(response) {
+    factory.getExpenses = function (personId, callback) {
+        $http.get('/calc/api/expenses/' + personId).then(function (response) {
             callback(response.data);
         });
     };
@@ -55,6 +55,23 @@ calculatorServices.factory('expensesCrudService', ['$http', '$location', functio
             $location.path('/expenses/' + expense.personId);
         });
     };
+
+    return factory;
+}]);
+
+calculatorServices.factory('userService', ['$http', '$location', function ($http, $location) {
+    var factory = {};
+
+    factory.register = function (newUser) {
+        $http.register('/calc/api/account',
+        {
+            "email": newUser.email,
+            "password": newUser.password,
+            "confirmPassword": newUser.confirmPassword
+        }).then(function () {
+            $location.path('/people/');
+        });
+    }
 
     return factory;
 }])
