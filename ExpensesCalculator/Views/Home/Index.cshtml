@@ -5,17 +5,21 @@
 
         @Styles.Render("~/Content/bootstrap.css")
         @Styles.Render("~/Content/styles.css")
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
     </head>
-    <body>
+    <body ng-cloak>
 
         <div ng-view class="container"></div>
 
         @Scripts.Render("~/Scripts/jquery-2.2.2.min.js")
         @Scripts.Render("~/Scripts/angular.js")
+        @Scripts.Render("~/Scripts/angular-animate.js")
+        @Scripts.Render("~/Scripts/angular-aria.js")
         @Scripts.Render("~/Scripts/angular-route.js")
         @Scripts.Render("~/Scripts/app/app.js")
         @Scripts.Render("~/Scripts/app/controllers/controllers.js")
         @Scripts.Render("~/Scripts/app/services/services.js")
         @Scripts.Render("~/Scripts/bootstrap.min.js")
+        <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
     </body>
 </html>

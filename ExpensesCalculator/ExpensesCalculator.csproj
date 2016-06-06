@@ -238,7 +238,6 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\controllers\controllers.js" />
-    <Content Include="Scripts\app\controllers\datePicker.js" />
     <Content Include="Scripts\app\controls\DatePicker.html" />
     <Content Include="Scripts\app\services\services.js" />
     <Content Include="Scripts\app\views\AddExpense.html" />

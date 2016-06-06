@@ -2,7 +2,8 @@
 var calculatorApp = new angular.module('calculatorApp', [
     'ngRoute',
     'calculatorControllers',
-    'calculatorServices'
+    'calculatorServices',
+    'ngMaterial'
 ]);
 
 calculatorApp.config(['$routeProvider',
