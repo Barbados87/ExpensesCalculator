@@ -69,3 +69,13 @@ calculatorControllers.controller('PersonDebtsCtrl', ['$scope', '$routeParams', '
         });
     }
 ]);
+
+calculatorControllers.controller('UserCtrl', ['$scope', 'userService',
+    function ($scope, userService) {
+        $scope.newUser = {};
+
+        $scope.register = function () {
+            userService.register($scope.newUser);
+        }
+    }
+]);
